@@ -12,7 +12,10 @@
 
 ## Installing
 labHTTP is easy to get up and running.
+
 1. Clone this repo
+
 2. `npm install`
+
 3. Run `node index.js`
 

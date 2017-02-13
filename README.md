@@ -1,7 +1,7 @@
 <h1 align="center">labHTTP</h1>
 
 <p align="center">
-<i>Node.JS webserver - an Edgelab project</i>
+<i>Node.JS webserver - an Racklab project</i>
 </p>
 ---
 ## Main features

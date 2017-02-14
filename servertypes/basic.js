@@ -9,8 +9,15 @@ var config = require('../config')
 
 
 http.createServer(function(request, response) {
+
   var uri = url.parse(request.url).pathname
     , filename = path.join(process.cwd(), uri)
+
+  if (filename == path.join(process.cwd(), 'config.js')) {
+    response.writeHead(403, {"X-Powered-By": "labHTTP"})
+    response.end()
+    return
+  }
   
   fs.exists(filename, function(exists) {
     if(!exists) {

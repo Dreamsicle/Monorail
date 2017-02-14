@@ -10,8 +10,8 @@ const servertype = 'basic'
 const web_port = 80
 
 // Password protection
-const username = "username1"
-const password = "password1"
+const username = "username"
+const password = "password"
 
 // Don't change anything beyond this point
 

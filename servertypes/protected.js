@@ -14,6 +14,12 @@ var password_protection = auth.basic({
     }
 )
 
+if (filename == path.join(process.cwd(), 'config.js')) {
+  response.writeHead(403, {"X-Powered-By": "labHTTP"})
+  response.end()
+  return
+}
+
 http.createServer(password_protection, function(request, response) {
   var uri = url.parse(request.url).pathname
     , filename = path.join(process.cwd(), uri)

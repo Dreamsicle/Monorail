@@ -31,6 +31,8 @@ http.createServer(function(request, response) {
       }
 
       response.writeHead(200, {"X-Powered-By": "labHTTP"});
+      var date = new Date();
+      file = file.replace("%DATE%",date)
       response.write(file, "binary")
       response.end();
     });

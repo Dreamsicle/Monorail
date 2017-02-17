@@ -12,8 +12,8 @@ var config = require('../config')
     port = config.port
 
 const keys = {
-  key: fs.readFileSync(process.cwd() + '/ssl/' + config.key),
-  cert: fs.readFileSync(process.cwd() + '/ssl/' + config.cert)
+  key: fs.readFileSync(config.key),
+  cert: fs.readFileSync(config.cert)
 }
 
 https.createServer(keys, function(request, response) {

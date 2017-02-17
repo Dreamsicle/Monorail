@@ -7,7 +7,12 @@ var config = {}
 const servertype = 'basic'
 
 // Port to listen on
-const web_port = 80
+const web_port = 443
+
+// SSL
+// Enter the full path to your SSL key and certificate.
+const key = ''
+const cert = ''
 
 // Password protection
 const username = "username"
@@ -18,6 +23,9 @@ const password = "password"
 config.servertype = servertype
 
 config.port = process.argv[2] || web_port
+
+config.key = key
+config.cert = cert
 
 config.username = username
 config.password = password

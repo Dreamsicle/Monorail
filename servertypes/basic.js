@@ -3,7 +3,7 @@
 // Mad props to him. 
 
 var config = require('../config')
-    http = require("http"),
+    https = require("https"),
     url = require("url"),
     path = require("path"),
     fs = require("fs"),
@@ -11,8 +11,12 @@ var config = require('../config')
     request = require('request'),
     port = config.port
 
+const keys = {
+  key: fs.readFileSync(process.cwd() + '/ssl/' + config.key),
+  cert: fs.readFileSync(process.cwd() + '/ssl/' + config.cert)
+}
 
-http.createServer(function(request, response) {
+https.createServer(keys, function(request, response) {
 
   var uri = url.parse(request.url).pathname
     , filename = path.join(process.cwd() + '/www/', uri)
@@ -42,4 +46,3 @@ http.createServer(function(request, response) {
     });
   });
 }).listen(parseInt(port, 10))
-

@@ -14,6 +14,8 @@ var password_protection = auth.basic({
     }
 )
 
+console.log(`Protected server started. PID is ${process.pid}.`)
+
 http.createServer(password_protection, function(request, response) {
   var uri = url.parse(request.url).pathname
     , filename = path.join(process.cwd() + '/www/', uri)

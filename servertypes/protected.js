@@ -20,7 +20,7 @@ http.createServer(password_protection, function(request, response) {
   
   fs.exists(filename, function(exists) {
     if(!exists) {
-      response.writeHead(404, {"X-Powered-By": "labHTTP"});
+      response.writeHead(404, {"X-Powered-By": "labHTTP"})
       response.end()
       return
     }
@@ -31,15 +31,13 @@ http.createServer(password_protection, function(request, response) {
       if(err) {        
         response.writeHead(500, {"Content-Type": "text/plain", "X-Powered-By": "labHTTP"})
         response.write(err + "\n")
-        response.end();
+        response.end()
         return
       }
 
-      response.writeHead(200, {"X-Powered-By": "labHTTP"});
+      response.writeHead(200, {"X-Powered-By": "labHTTP"})
       response.write(file, "binary")
-      response.end();
+      response.end()
     });
   });
 }).listen(parseInt(port, 10))
-
-console.log("Basic server started.");

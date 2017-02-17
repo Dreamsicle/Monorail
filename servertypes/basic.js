@@ -1,3 +1,7 @@
+// I'd like to make a note that a lot of the work on the basic servers were already done by this guy:
+// https://gist.github.com/ryanflorence/701407
+// Mad props to him. 
+
 var config = require('../config')
     http = require("http"),
     url = require("url"),
@@ -15,7 +19,7 @@ http.createServer(function(request, response) {
   
   fs.exists(filename, function(exists) {
     if(!exists) {
-      response.writeHead(404, {"X-Powered-By": "labHTTP"});
+      response.writeHead(404, {"X-Powered-By": "labHTTP"})
       response.end()
       return
     }
@@ -30,7 +34,7 @@ http.createServer(function(request, response) {
         return
       }
 
-      response.writeHead(200, {"X-Powered-By": "labHTTP"});
+      response.writeHead(200, {"X-Powered-By": "labHTTP"})
       var date = new Date();
       file = file.replace("%DATE%",date)
       response.write(file, "binary")
@@ -39,4 +43,3 @@ http.createServer(function(request, response) {
   });
 }).listen(parseInt(port, 10))
 
-console.log("Basic server started.");

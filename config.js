@@ -22,4 +22,4 @@ config.port = process.argv[2] || web_port
 config.username = username
 config.password = password
 
-module.exports = config;
+module.exports = config

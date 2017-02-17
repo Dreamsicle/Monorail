@@ -1,19 +1,22 @@
 var config = require('./config')
-    auth = require('http-auth'),
+    cluster = require('cluster'),
     port = config.port
+
+const numCPUs = require('os').cpus().length
 
 if (process.getuid && process.getuid() === 1000) {
     console.log("Please run as root.")
     return
 }
 
-console.log("Manager started.")
+if (cluster.isMaster) {
+    console.log("Manager started.")
+    console.log(`Manager PID is ${process.pid}.`)
+}
 
+    var serverstart = require('./serverstart')
+    serverstart
 
-// I'd like to make a note that a lot of the work on the basic servers were already done by this guy:
-// https://gist.github.com/ryanflorence/701407
-// Mad props to him. 
-var server = require('./servertypes/' + config.servertype)
-server
-
-console.log("labHTTP running on port " + port + ".");
+if (cluster.isMaster) {
+    console.log("labHTTP running on port " + port + " with " + numCPUs + " threads.")
+}

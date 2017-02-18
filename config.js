@@ -10,9 +10,9 @@ const servertype = 'basic'
 const web_port = 443
 
 // SSL
-// Enter the path to your SSL key and certificate.
-const key = './server.key'
-const cert = './server.crt'
+// Enter the full path to your SSL key and certificate.
+const key = ''
+const cert = ''
 
 // Password protection
 const username = "username"

@@ -9,6 +9,13 @@ if (process.getuid && process.getuid() === 1000) {
     return
 }
 
+if (config.key == '') {
+    console.log("SSL is required to run labHTTP.")
+    console.log("If you need a certificate, we highly recommend the incredible service provided by Let's Encrypt. ")
+    console.log("Our preferred tool is ZeroSSL (https://zerossl.com/free-ssl/#crt).")
+    return
+}
+
 if (cluster.isMaster) {
     console.log("Manager started.")
 }

@@ -19,7 +19,7 @@ const keys = {
   cert: fs.readFileSync(config.cert)
 }
 
-https.createServer(password_protection, function(request, response) {
+https.createServer(keys, password_protection, function(request, response) {
   var uri = url.parse(request.url).pathname
     , filename = path.join(process.cwd() + '/www/', uri)
   

@@ -22,10 +22,4 @@ if (cluster.isMaster) {
 
 if (cluster.isMaster) {
     console.log(`Manager PID is ${process.pid}.`)
-<<<<<<< HEAD
 }
-=======
-    console.log("labHTTP running on port " + port + " with " + numCPUs + " threads.")
-}
-
->>>>>>> 465030f098d4653177f44ef45bc9b0ba74255a3d

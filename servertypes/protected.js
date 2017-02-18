@@ -1,5 +1,5 @@
 var config = require('../config')
-    http = require("http"),
+    https = require("https"),
     url = require("url"),
     path = require("path"),
     fs = require("fs"),
@@ -14,9 +14,12 @@ var password_protection = auth.basic({
     }
 )
 
-console.log(`Protected server started. PID is ${process.pid}.`)
+const keys = {
+  key: fs.readFileSync(config.key),
+  cert: fs.readFileSync(config.cert)
+}
 
-http.createServer(password_protection, function(request, response) {
+https.createServer(password_protection, function(request, response) {
   var uri = url.parse(request.url).pathname
     , filename = path.join(process.cwd() + '/www/', uri)
   

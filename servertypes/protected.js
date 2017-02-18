@@ -19,10 +19,10 @@ const keys = {
   cert: fs.readFileSync(config.cert)
 }
 
-https.createServer(keys, password_protection, function(request, response) {
+https.createServer(password_protection, keys, function(request, response) {
   var uri = url.parse(request.url).pathname
     , filename = path.join(process.cwd() + '/www/', uri)
-  
+
   fs.exists(filename, function(exists) {
     if(!exists) {
       response.writeHead(404, {"X-Powered-By": "labHTTP"})

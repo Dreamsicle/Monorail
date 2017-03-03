@@ -7,6 +7,8 @@ var config = require(process.cwd() + '/config')
     url = require("url"),
     path = require("path"),
     fs = require("fs"),
+    Remarkable = require('remarkable'),
+    convertmd = new Remarkable(),
     auth = require('http-auth'),
     request = require('request'),
     port = config.port
@@ -28,7 +30,7 @@ https.createServer(keys, function(request, response) {
       return
     }
 
-    if (fs.statSync(filename).isDirectory()) filename += '/index.html';
+    if (fs.statSync(filename).isDirectory()) filename += '/index.md';
 
     fs.readFile(filename, "binary", function(err, file) {
       if(err) {        
@@ -41,7 +43,7 @@ https.createServer(keys, function(request, response) {
       response.writeHead(200, {"X-Powered-By": "labHTTP"})
       var date = new Date();
       file = file.replace("%DATE%",date)
-      response.write(file, "binary")
+      response.write(convertmd.render(file), "binary")
       response.end();
     });
   });

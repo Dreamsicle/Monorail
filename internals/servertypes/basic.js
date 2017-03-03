@@ -2,7 +2,7 @@
 // https://gist.github.com/ryanflorence/701407
 // Mad props to him. 
 
-var config = require('../config')
+var config = require(process.cwd() + '/config')
     https = require("https"),
     url = require("url"),
     path = require("path"),

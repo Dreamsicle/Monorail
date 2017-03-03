@@ -1,4 +1,4 @@
-var config = require('../config')
+var config = require(process.cwd() + '/config')
 const numCPUs = require('os').cpus().length
 
 if (cluster.isMaster) {

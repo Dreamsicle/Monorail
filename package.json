@@ -23,6 +23,7 @@
   "homepage": "https://github.com/danPixl/labHTTP#readme",
   "dependencies": {
     "http-auth": "^3.1.1",
+    "remarkable": "^1.7.1",
     "request": "^2.79.0"
   }
 }

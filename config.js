@@ -2,6 +2,12 @@ var config = {}
 
 // Change settings here
 
+// Website name and URL
+// By default, you can go to https://local.racklab.xyz (points to localhost) using the keys obtainable from the official page or using self-signed certs. 
+
+const URL = 'https://local.racklab.xyz'
+const name = 'labHTTP Pivot'
+
 // Server type
 // Should be any JS file under the servertypes directory, omit the .js
 const servertype = 'basic'
@@ -29,5 +35,8 @@ config.cert = cert
 
 config.username = username
 config.password = password
+
+config.URL = URL
+config.websiteName = name
 
 module.exports = config

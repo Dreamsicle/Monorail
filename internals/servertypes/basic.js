@@ -25,7 +25,7 @@ https.createServer(keys, function(request, response) {
   
   fs.exists(filename, function(exists) {
     if(!exists) {
-      response.writeHead(404, {"X-Powered-By": "labHTTP"})
+      response.writeHead(404, {"X-Powered-By": "labHTTP Pivot"})
       response.end()
       return
     }
@@ -34,7 +34,7 @@ https.createServer(keys, function(request, response) {
 
     fs.readFile(filename, "binary", function(err, file) {
       if(err) {        
-        response.writeHead(500, {"Content-Type": "text/plain", "X-Powered-By": "labHTTP"})
+        response.writeHead(500, {"Content-Type": "text/plain", "X-Powered-By": "labHTTP Pivot"})
         response.write(err + "\n")
         response.end();
         return
@@ -42,7 +42,7 @@ https.createServer(keys, function(request, response) {
 
       var markdown = file
 
-      response.writeHead(200, {"X-Powered-By": "labHTTP"})
+      response.writeHead(200, {"X-Powered-By": "labHTTP Pivot"})
       fs.readFile(page, "binary", function(err, file) {
         var processedpage = file.replace("%content%",convertmd.render(markdown))
         response.write(processedpage, "binary")

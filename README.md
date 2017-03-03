@@ -1,4 +1,4 @@
-<h1 align="center">labHTTP</h1>
+<h1 align="center">labHTTP Pivot</h1>
 
 <p align="center">
 <i>Node.JS webserver - a Racklab project</i>
@@ -11,7 +11,7 @@
 - NodeJS as a PHP replacement (soon)
 
 ## Installing
-labHTTP is easy to get up and running.
+labHTTP Pivot is easy to get up and running.
 
 1. Clone this repo
 

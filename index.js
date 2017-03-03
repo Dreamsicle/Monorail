@@ -20,7 +20,7 @@ if (cluster.isMaster) {
     console.log("Manager started.")
 }
 
-    var serverstart = require('./serverstart')
+    var serverstart = require('./internals/serverstart')
     serverstart
 
 if (cluster.isMaster) {

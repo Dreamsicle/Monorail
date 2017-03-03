@@ -19,7 +19,7 @@ const keys = {
 https.createServer(keys, function(request, response) {
 
   var uri = url.parse(request.url).pathname
-    , filename = path.join(process.cwd() + '/www/', uri)
+    , filename = path.join(process.cwd() + '/content/', uri)
   
   fs.exists(filename, function(exists) {
     if(!exists) {

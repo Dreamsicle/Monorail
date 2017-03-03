@@ -6,11 +6,11 @@ var config = {}
 // Should be any JS file under the servertypes directory, omit the .js
 const servertype = 'basic'
 
-// Port to listen on
+// Port to listen on (If using SSL/HTTPS, set it to 443. Automatic redirects for port 80 will be set up.)
 const web_port = 443
 
 // SSL
-// Enter the full path to your SSL key and certificate.
+// Enter the full path.
 const key = ''
 const cert = ''
 

@@ -9,7 +9,6 @@ var config = require(process.cwd() + '/config')
     fs = require("fs"),
     Remarkable = require('remarkable'),
     convertmd = new Remarkable(),
-    auth = require('http-auth'),
     request = require('request'),
     port = config.port,
     page = process.cwd() + '/templates/page.html'
@@ -45,7 +44,6 @@ https.createServer(keys, function(request, response) {
 
       response.writeHead(200, {"X-Powered-By": "labHTTP"})
       fs.readFile(page, "binary", function(err, file) {
-        var date = new Date()
         var processedpage = file.replace("%content%",convertmd.render(markdown))
         response.write(processedpage, "binary")
         response.end()

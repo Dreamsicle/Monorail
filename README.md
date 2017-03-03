@@ -1,21 +1,9 @@
-<h1 align="center">labHTTP Pivot</h1>
+# labHTTP Pivot
+----------
 
-<p align="center">
-<i>Node.JS webserver - a Racklab project</i>
-</p>
----
-## Main features
-- DIY Stacks
-- Small (3.8 MB with all modules installed, 11 KB alone)
-- Fast (Starts in under a second, serves the included index.html in 3ms)
-- NodeJS as a PHP replacement (soon)
+## Welcome! 
+Please change the files in the content subdirectory on your server. Documentation coming soon. Write in GitHub-flavored Markdown.
 
-## Installing
-labHTTP Pivot is easy to get up and running.
+This page *is* the README, located in the previously mentioned content folder. 
 
-1. Clone this repo
-
-2. `npm install`
-
-3. Run `node index.js`
-
+	

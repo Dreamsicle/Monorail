@@ -11,7 +11,8 @@ var config = require(process.cwd() + '/config')
     convertmd = new Remarkable(),
     auth = require('http-auth'),
     request = require('request'),
-    port = config.port
+    port = config.port,
+    page = process.cwd() + '/templates/page.html'
 
 const keys = {
   key: fs.readFileSync(config.key),
@@ -43,8 +44,13 @@ https.createServer(keys, function(request, response) {
       response.writeHead(200, {"X-Powered-By": "labHTTP"})
       var date = new Date();
       file = file.replace("%DATE%",date)
-      response.write(convertmd.render(file), "binary")
-      response.end();
+      file = convertmd.render(file)
+      var processedpage = file
+      fs.readFile(page, "binary", function(err, file) {
+        var finalpage = processedpage.replace("%content%", page)
+        response.write(finalpage, "binary")
+        response.end()
+      })
     });
   });
 }).listen(parseInt(port, 10))

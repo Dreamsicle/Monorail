@@ -41,14 +41,13 @@ https.createServer(keys, function(request, response) {
         return
       }
 
+      var markdown = file
+
       response.writeHead(200, {"X-Powered-By": "labHTTP"})
-      var date = new Date();
-      file = file.replace("%DATE%",date)
-      file = convertmd.render(file)
-      var processedpage = file
       fs.readFile(page, "binary", function(err, file) {
-        var finalpage = processedpage.replace("%content%", page)
-        response.write(finalpage, "binary")
+        var date = new Date()
+        var processedpage = file.replace("%content%",convertmd.render(markdown))
+        response.write(processedpage, "binary")
         response.end()
       })
     });

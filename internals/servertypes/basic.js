@@ -20,7 +20,7 @@ const keys = {
 
 https.createServer(keys, function(request, response) {
 
-  var uri = url.parse(request.url).pathname
+  var uri = decodeURI(url.parse(request.url).pathname)
     , filename = path.join(process.cwd() + '/content/', uri)
   
   fs.exists(filename, function(exists) {
@@ -30,7 +30,7 @@ https.createServer(keys, function(request, response) {
       return
     }
 
-    if (fs.statSync(filename).isDirectory()) filename += '/index.md';
+    if (fs.statSync(filename).isDirectory()) filename += 'index.md';
 
     fs.readFile(filename, "binary", function(err, file) {
       if(err) {        
@@ -44,7 +44,8 @@ https.createServer(keys, function(request, response) {
 
       response.writeHead(200, {"X-Powered-By": "labHTTP Pivot"})
       fs.readFile(page, "binary", function(err, file) {
-        var processedpage = file.replace("%content%",convertmd.render(markdown))
+        var processedpage = file.replace("%content%",convertmd.render(markdown)),
+            processedpage = processedpage.replace("%title%", path.basename(filename).replace(/\.[^/.]+$/, " - ") + config.websiteName)
         response.write(processedpage, "binary")
         response.end()
       })

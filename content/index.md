@@ -1,9 +1,31 @@
 # labHTTP Pivot
 ----------
 
-## Welcome! 
-Please change the files in the content subdirectory on your server. Documentation coming soon. Write in GitHub-flavored Markdown.
+## Getting Started
+Change the files in the `content` subdirectory from where labHTTP is stored. Type in GitHub-flavored markdown.
 
-This page *is* the README, located in the previously mentioned content folder. 
+## Configuration
+All configuration lives in `config.js`, located wherever you downloaded labHTTP.
 
-	
+### Site path and name
+
+```javascript
+const URL = 'https://local.racklab.xyz'
+const name = 'labHTTP Pivot'
+```
+These are the things you'll want to change first for a production server. They are used for HTTPS redirects and page titles respectively.
+Quick note on the `local.racklab.xyz` thing: this is here because it allows you to use a certificate that has already been signed by us, and the domain's pointed at `localhost`. Only use this if you're messing around or developing.
+
+### Server port and type
+
+```javascript
+// Server type
+// Should be any JS file under the servertypes directory, omit the .js
+const servertype = 'basic'
+
+// Port to listen on (If using SSL/HTTPS, set it to 443. Automatic redirects for port 80 will be set up.)
+const web_port = 443
+```
+Server types are being phased out. Don't use them. Basically, they were intended to allow you to change into different 'loadouts' of code that the server would run on. With the Pivot project, this isn't required.
+
+The web port should be self explanatory. No quotes needed when changing it.

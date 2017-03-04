@@ -1,5 +1,5 @@
-var config = require(process.cwd() + '/config')
-const numCPUs = require('os').cpus().length
+var config = require(process.cwd() + '/config'),
+    numCPUs = require('os').cpus().length
 
 if (cluster.isMaster) {
   // Fork workers.
@@ -7,6 +7,6 @@ if (cluster.isMaster) {
     cluster.fork()
   }
 } else {
-var server = require('./servertypes/' + config.servertype)
-server
+  var server = require('./servertypes/' + config.servertype)
+  server
 }

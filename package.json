@@ -25,8 +25,5 @@
     "http-auth": "^3.1.1",
     "remarkable": "^1.7.1",
     "request": "^2.79.0"
-  },
-  "devDependencies": {
-    "standard": "^9.0.0"
   }
 }

@@ -48,17 +48,14 @@ https.createServer(keys, function (request, response) {
       var markdown = file
 
       response.writeHead(200, {'X-Powered-By': 'labHTTP Pivot'})
-      console.log(path.extname(filename))
       if (path.extname(filename) == '.md' ) {
         fs.readFile(page, "binary", function(err, file) {
-        console.log("It works!")
         var processedpage = file.replace('%content%', convertmd.render(markdown)),
             processedpage = processedpage.replace('%title%', path.basename(filename).replace(/\.[^/.]+$/, ' - ') + config.websiteName)
         response.write(processedpage, 'binary')
         response.end()
         })
       } else {
-        console.log("It doesn't.")
         response.write(file, 'binary')
         response.end()
       }

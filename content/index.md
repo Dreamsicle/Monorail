@@ -29,3 +29,19 @@ const web_port = 443
 Server types are being phased out. Don't use them. Basically, they were intended to allow you to change into different 'loadouts' of code that the server would run on. With the Pivot project, this isn't required.
 
 The web port should be self explanatory. No quotes needed when changing it.
+
+### HTTPS and password protection
+
+```javascript
+// SSL
+// Enter the full path.
+const key = '/path/to/your/server.key'
+const cert = '/path/to/your/server.crt'
+
+// Password protection
+const username = 'username'
+const password = 'password'
+```
+Because HTTPS/TLS/SSL is used, you're going to need to provide a certificate and a key. It's okay to used self-signed keys and certificates for development or messing around. If you're using `local.racklab.xyz` for your site's URL, we'll have signed certs up soon.
+
+In the future, you'll be able to force authentication to enter the site. Hence the username and password config options.

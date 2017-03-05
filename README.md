@@ -1,21 +1,11 @@
-<h1 align="center">labHTTP</h1>
+# labHTTP Pivot
 
-<p align="center">
-<i>Node.JS webserver - a Racklab project</i>
-</p>
----
-## Main features
-- DIY Stacks
-- Small (3.8 MB with all modules installed, 11 KB alone)
-- Fast (Starts in under a second, serves the included index.html in 3ms)
-- NodeJS as a PHP replacement (soon)
+## Welcome! 
 
-## Installing
-labHTTP is easy to get up and running.
+This is the branch for a new, experimental version of labHTTP. Compared to something like nginx or Apache, this is built to be more similar to [werc](http://werc.cat-v.org/) or [Jekyll](https://jekyllrb.com/).
 
-1. Clone this repo
+This might not be supported in the future, I'm just messing around. Tested on Node 6.9.1.
 
-2. `npm install`
+## Install
 
-3. Run `node index.js`
-
+Clone the repo, do an `npm install`, get certs and modify `config.js` accordingly, and run `node index.js` from the working directory.

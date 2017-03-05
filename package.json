@@ -1,5 +1,5 @@
 {
-  "name": "labhttp",
+  "name": "labHTTP Pivot",
   "version": "0.0.1",
   "description": "Pure Node.JS web server.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danPixl/labHTTP.git"
+    "url": "git+https://github.com/danPixl/labHTTP Pivot.git"
   },
   "keywords": [
     "web",
@@ -18,11 +18,12 @@
   "author": "danPixl",
   "license": "SEE LICENSE IN README",
   "bugs": {
-    "url": "https://github.com/danPixl/labHTTP/issues"
+    "url": "https://github.com/danPixl/labHTTP Pivot/issues"
   },
-  "homepage": "https://github.com/danPixl/labHTTP#readme",
+  "homepage": "https://github.com/danPixl/labHTTP Pivot#readme",
   "dependencies": {
     "http-auth": "^3.1.1",
+    "remarkable": "^1.7.1",
     "request": "^2.79.0"
   }
 }

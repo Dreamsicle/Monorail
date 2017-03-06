@@ -63,6 +63,7 @@ http2.createServer(keys, function (request, response) {
         response.push(process.cwd() + '/content/css/page.css')
         response.push(process.cwd() + '/content/css/prism.css')
         response.push(process.cwd() + '/content/js/prism.js')
+        response.push(process.cwd() + '/content/js/sw.js')
         response.write(processedpage, 'binary')
         response.end()
         })

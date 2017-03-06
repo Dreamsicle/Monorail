@@ -3,7 +3,7 @@
 // Mad props to him.
 
 var config = require(process.cwd() + '/config')
-    https = require('https'),
+    http2 = require('http2'),
     http = require('http'),
     url = require('url'),
     path = require('path'),
@@ -25,7 +25,7 @@ var convertmd = new Remarkable({
   linkify: true,
 });
 
-https.createServer(keys, function (request, response) {
+http2.createServer(keys, function (request, response) {
   var uri = decodeURI(url.parse(request.url).pathname),
     filename = path.join(process.cwd() + '/content/', uri)
 

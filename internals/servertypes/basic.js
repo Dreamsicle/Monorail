@@ -3,7 +3,8 @@
 // Mad props to him.
 
 var config = require(process.cwd() + '/config')
-https = require('https'),
+    https = require('https'),
+    http = require('http'),
     url = require('url'),
     path = require('path'),
     fs = require('fs'),
@@ -51,7 +52,8 @@ https.createServer(keys, function (request, response) {
       if (path.extname(filename) == '.md' ) {
         fs.readFile(page, "binary", function(err, file) {
         var processedpage = file.replace('%content%', convertmd.render(markdown)),
-            processedpage = processedpage.replace('%title%', path.basename(filename).replace(/\.[^/.]+$/, ' - ') + config.websiteName)
+            processedpage = processedpage.replace('%title%', path.basename(filename).replace(/\.[^/.]+$/, ' - ') + config.websiteName),
+            processedpage = processedpage.replace('%footer-backto%', '<a href="' + config.URL + '"><p class="backto">Back to  ' + config.websiteName + '</p></a>')
         response.write(processedpage, 'binary')
         response.end()
         })
@@ -62,3 +64,12 @@ https.createServer(keys, function (request, response) {
     })
   })
 }).listen(parseInt(port, 10))
+
+http.createServer(function(request, response) {
+  var uri = url.parse(request.url).pathname
+    , filename = path.join(process.cwd(), uri)
+
+  response.writeHead(200);
+  response.write('<html><head><meta http-equiv="refresh" content="0; url=' + config.URL + uri + '" /></head></html>', 'binary', {'X-Powered-By': 'labHTTP Pivot', 'Content-Security-Policy': 'upgrade-insecure-requests'});
+  response.end();
+}).listen(parseInt(80, 10));

@@ -48,7 +48,13 @@ http2.createServer(keys, function (request, response) {
 
       var markdown = file
 
-      response.writeHead(200, {'X-Powered-By': 'labHTTP Pivot'})
+      if (path.extname(filename) == ".js" ) {
+        var filetype = 'text/javascript'
+      } else {
+        if (path.extname(filename) == ".html" ){ var filetype = 'text/html' } else if (path.extname(filename) == ".css" ) { var filetype = 'text/css' }
+      }
+
+      response.writeHead(200, {'X-Powered-By': 'labHTTP Pivot', 'Content-Type': filetype})
       if (path.extname(filename) == '.md' ) {
         fs.readFile(page, "binary", function(err, file) {
         var processedpage = file.replace('%content%', convertmd.render(markdown)),
@@ -63,6 +69,11 @@ http2.createServer(keys, function (request, response) {
       } else {
         if (path.extname(filename).substring(0, 3) == ".js" ){ 
           var file = file.replace(/%name%/ig, config.websiteName).replace(/%URL%/ig, config.URL)
+          response.write(file, 'binary')
+          response.end()
+          return
+        }
+        if (path.extname(filename) == ".js") {
           response.write(file, 'binary')
           response.end()
           return

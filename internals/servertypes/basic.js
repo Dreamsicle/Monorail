@@ -3,7 +3,8 @@
 // Mad props to him.
 
 var config = require(process.cwd() + '/config')
-https = require('https'),
+    http2 = require('http2'),
+    http = require('http'),
     url = require('url'),
     path = require('path'),
     fs = require('fs'),
@@ -24,7 +25,7 @@ var convertmd = new Remarkable({
   linkify: true,
 });
 
-https.createServer(keys, function (request, response) {
+http2.createServer(keys, function (request, response) {
   var uri = decodeURI(url.parse(request.url).pathname),
     filename = path.join(process.cwd() + '/content/', uri)
 
@@ -47,18 +48,49 @@ https.createServer(keys, function (request, response) {
 
       var markdown = file
 
-      response.writeHead(200, {'X-Powered-By': 'labHTTP Pivot'})
+      if (path.extname(filename) == ".js" ) {
+        var filetype = 'text/javascript'
+      } else {
+        if (path.extname(filename) == ".html" ){ var filetype = 'text/html' } else if (path.extname(filename) == ".css" ) { var filetype = 'text/css' }
+      }
+
+      response.writeHead(200, {'X-Powered-By': 'labHTTP Pivot', 'Content-Type': filetype})
       if (path.extname(filename) == '.md' ) {
         fs.readFile(page, "binary", function(err, file) {
         var processedpage = file.replace('%content%', convertmd.render(markdown)),
-            processedpage = processedpage.replace('%title%', path.basename(filename).replace(/\.[^/.]+$/, ' - ') + config.websiteName)
+            processedpage = processedpage.replace('%title%', path.basename(filename).replace(/\.[^/.]+$/, ' - ') + config.websiteName),
+            processedpage = processedpage.replace('%footer-backto%', '<a href="' + config.URL + '"><p class="backto">Back to  ' + config.websiteName + '</p></a>')
+        response.push(process.cwd() + '/content/css/page.css')
+        response.push(process.cwd() + '/content/css/prism.css')
+        response.push(process.cwd() + '/content/js/prism.js')
+        response.push(process.cwd() + '/content/js/sw.js')
         response.write(processedpage, 'binary')
         response.end()
         })
       } else {
+        if (path.extname(filename).substring(0, 3) == ".js" ){ 
+          var file = file.replace(/%name%/ig, config.websiteName).replace(/%URL%/ig, config.URL)
+          response.write(file, 'binary')
+          response.end()
+          return
+        }
+        if (path.extname(filename) == ".js") {
+          response.write(file, 'binary')
+          response.end()
+          return
+        }
         response.write(file, 'binary')
         response.end()
       }
     })
   })
 }).listen(parseInt(port, 10))
+
+http.createServer(function(request, response) {
+  var uri = url.parse(request.url).pathname
+    , filename = path.join(process.cwd(), uri)
+
+  response.writeHead(200);
+  response.write('<html><head><meta http-equiv="refresh" content="0; url=' + config.URL + uri + '" /></head></html>', 'binary', {'X-Powered-By': 'labHTTP Pivot', 'Content-Security-Policy': 'upgrade-insecure-requests'});
+  response.end();
+}).listen(parseInt(80, 10));

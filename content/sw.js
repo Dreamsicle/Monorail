@@ -1,8 +1,8 @@
-var CACHE = '%name%-cache';
+// Stolen from https://serviceworke.rs/strategy-cache-and-update_service-worker_doc.html
 
+var CACHE = '%name%-cache';
 // On install, cache some resources.
 self.addEventListener('install', function(evt) {
-  console.log('The service worker is being installed.');
 
   // Ask the service worker to keep installing until the returning promise
   // resolves.

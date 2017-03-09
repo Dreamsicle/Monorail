@@ -1,8 +1,10 @@
-# labHTTP Pivot
+# %websiteName%
 ----------
 
 ## Getting Started
 Change the files in the `content` subdirectory from where labHTTP is stored. Type in GitHub-flavored markdown.
+
+You'll need to refresh ~2 times because of the ServiceWorker. It caches the majority of your site so that people can access it even when they're offline or your server is down.
 
 ## Configuration
 All configuration lives in `config.js`, located wherever you downloaded labHTTP.
@@ -10,8 +12,8 @@ All configuration lives in `config.js`, located wherever you downloaded labHTTP.
 ### Site path and name
 
 ```javascript
-const URL = 'https://local.racklab.xyz'
-const name = 'labHTTP Pivot'
+const URL = '%URL%'
+const name = '%websiteName%'
 ```
 These are the things you'll want to change first for a production server. They are used for HTTPS redirects and page titles respectively.
 Quick note on the `local.racklab.xyz` thing: this is here because it allows you to use a certificate that has already been signed by us, and the domain's pointed at `localhost`. Only use this if you're messing around or developing.
@@ -45,3 +47,5 @@ const password = 'password'
 Because HTTPS/TLS/SSL is used, you're going to need to provide a certificate and a key. It's okay to used self-signed keys and certificates for development or messing around. If you're using `local.racklab.xyz` for your site's URL, we'll have signed certs up soon.
 
 In the future, you'll be able to force authentication to enter the site. Hence the username and password config options.
+
+> lol

@@ -58,7 +58,7 @@ http2.createServer(keys, function (request, response) {
       if (path.extname(filename) == '.md' ) {
         fs.readFile(page, "binary", function(err, file) {
         var processedpage = file.replace('%content%', convertmd.render(markdown)),
-            processedpage = processedpage.replace('%title%', path.basename(filename).replace(/\.[^/.]+$/, ' - ') + config.websiteName),
+            processedpage = processedpage.replace('%title%', path.basename(filename).replace(/\.[^/.]+$/, ' - ') + config.websiteName).replace(/%URL%/ig, config.URL).replace(/%websiteName%/g, config.websiteName),
             processedpage = processedpage.replace('%footer-backto%', '<a href="' + config.URL + '"><p class="backto">Back to  ' + config.websiteName + '</p></a>')
         response.push(process.cwd() + '/content/css/page.css')
         response.push(process.cwd() + '/content/css/prism.css')

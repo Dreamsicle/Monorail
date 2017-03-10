@@ -1,5 +1,5 @@
 {
-  "name": "labHTTP Pivot",
+  "name": "labhttp-pivot",
   "version": "0.0.1",
   "description": "Pure Node.JS web server.",
   "main": "index.js",

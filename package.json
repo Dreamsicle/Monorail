@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/danPixl/labHTTP Pivot#readme",
   "dependencies": {
+    "highlight.js": "^9.10.0",
     "http-auth": "^3.1.1",
     "http2": "^3.3.6",
     "remarkable": "^1.7.1",

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#1E1E24">
+        <link rel="manifest" href="/manifest.json">
+        <title>%title%</title>
+        <link rel="stylesheet" href="css/page.css" />
+        <link href="css/prism.css" rel="stylesheet" />
+        <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js').then(function(registration) {
+              // Registration was successful
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }).catch(function(err) {
+              // registration failed :(
+              console.log('ServiceWorker registration failed: ', err);
+            });
+          });
+        }
+        </script>
+    </head>
+    <body>
+        %content%
+        <script src="js/prism.js" type="text/javascript"></script>
+        <hr class="footerhr">%footer-backto%
+        <hr class="footerhr2"><p style="font-size: 12px; margin-top: -2px"><i>Powered by Monorail</i></p>
+    </body>
+</html>

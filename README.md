@@ -1,21 +1,19 @@
-<h1 align="center">labHTTP</h1>
+<img style="margin-left: -8px;" src="http://github.racklab.xyz/images/monorail/logo/transparent.png">
 
-<p align="center">
-<i>Node.JS webserver - a Racklab project</i>
+<p style="font-family: 'Fugaz One', sans-serif; font-size: 1.1rem; margin-top: -25px;">Node.JS Webserver</p>
+<p  style="font-family: 'Fugaz One', sans-serif; font-size: 0.9rem;">A Racklab project</p>
+
+<p style="margin-top: -10px">
+<a href="http://nodejs.org"><img src="https://img.shields.io/badge/Node.js-6.9.1-339933.svg?style=flat-square" alt="Node.JS"></a>
+<a href="http://npmjs.com"><img src="https://img.shields.io/badge/npm-3.10.8-C12127.svg?style=flat-square" alt="npm"></a>
 </p>
+
 ---
-## Main features
-- DIY Stacks
-- Small (3.8 MB with all modules installed, 11 KB alone)
-- Fast (Starts in under a second, serves the included index.html in 3ms)
-- NodeJS as a PHP replacement (soon)
 
-## Installing
-labHTTP is easy to get up and running.
+## Welcome! 
 
-1. Clone this repo
+This branch, and soon, repository, will be supporting a new webserver created from the ashes of labHTTP. It can currently take markdown files and convert them to a full blown website, similar to Jekyll, but soon there will be an extensions system.
 
-2. `npm install`
+## Install
 
-3. Run `node index.js`
-
+Clone the repo, do an `npm install`, get certs and modify `config.js` accordingly, and run `node index.js` from the working directory.

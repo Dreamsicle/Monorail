@@ -4,8 +4,8 @@
 <p  style="font-family: 'Fugaz One', sans-serif; font-size: 0.9rem;">A Racklab project</p>
 
 <p style="margin-top: -10px">
-<a href="http://nodejs.org"><img src="https://img.shields.io/badge/Node.js-6.9.1-339933.svg" alt="Node.JS"></a>
-<a href="http://npmjs.com"><img src="https://img.shields.io/badge/npm-3.10.8-C12127.svg" alt="npm"></a>
+<a href="http://nodejs.org"><img src="https://img.shields.io/badge/Node.js-6.9.1-339933.svg?style=flat-square" alt="Node.JS"></a>
+<a href="http://npmjs.com"><img src="https://img.shields.io/badge/npm-3.10.8-C12127.svg?style=flat-square" alt="npm"></a>
 </p>
 
 ---

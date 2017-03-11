@@ -1,5 +1,3 @@
 node_modules/
-*.html
-*.css
 *.key
 *.crt

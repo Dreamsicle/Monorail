@@ -3,8 +3,8 @@
   "short_name": "%name%",
   "start_url": "%URL%",
   "display": "standalone",
-  "background_color": "#EEEEEE",
-  "theme_color": "#444",
+  "background_color": "#BEC5AD",
+  "theme_color": "#1E1E24",
   "description": "Stock Monorail site.",
   "icons": [{
     "src": "img/touch/homescreen144.png",

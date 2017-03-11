@@ -10,7 +10,7 @@ if (process.getuid && process.getuid() === 1000) {
 }
 
 if (config.key == '') {
-    console.log("SSL is required to run labHTTP Pivot.")
+    console.log("SSL is required to run Monorail Pivot.")
     console.log("If you need a certificate, we highly recommend the incredible service provided by Let's Encrypt. ")
     console.log("Our preferred tool is ZeroSSL (https://zerossl.com/free-ssl/#crt).")
     return
@@ -24,5 +24,5 @@ if (cluster.isMaster) {
     serverstart
 
 if (cluster.isMaster) {
-    console.log("labHTTP Pivot starting on port " + port + " with " + numCPUs + " threads.")
+    console.log("Monorail Pivot starting on port " + port + " with " + numCPUs + " threads.")
 }

@@ -30,7 +30,7 @@ http2.createServer(keys, function (request, response) {
     filename = path.join(process.cwd() + '/content/', uri)
 
     if (path.basename(filename) == 'config'){
-      response.writeHead(418, { 'X-Powered-By': 'labHTTP Teapot' })
+      response.writeHead(418, { 'X-Powered-By': 'Monorail Teapot' })
       response.write('SERVER_WARN: I\'m a teapot.')
       response.end()
       return
@@ -38,7 +38,7 @@ http2.createServer(keys, function (request, response) {
 
   fs.exists(filename, function (exists) {
     if (!exists) {
-      response.writeHead(404, {'X-Powered-By': 'labHTTP Pivot'})
+      response.writeHead(404, {'X-Powered-By': 'Monorail Pivot'})
       response.end()
       return
     }
@@ -47,7 +47,7 @@ http2.createServer(keys, function (request, response) {
 
     fs.readFile(filename, 'binary', function (err, file) {
       if (err) {
-        response.writeHead(500, {'Content-Type': 'text/plain', 'X-Powered-By': 'labHTTP Pivot'})
+        response.writeHead(500, {'Content-Type': 'text/plain', 'X-Powered-By': 'Monorail Pivot'})
         response.write(err + '\n')
         response.end()
         return
@@ -61,7 +61,7 @@ http2.createServer(keys, function (request, response) {
         if (path.extname(filename) == ".html" ){ var filetype = 'text/html' } else if (path.extname(filename) == ".css" ) { var filetype = 'text/css' }
       }
 
-      response.writeHead(200, {'X-Powered-By': 'labHTTP Pivot', 'Content-Type': filetype})
+      response.writeHead(200, {'X-Powered-By': 'Monorail Pivot', 'Content-Type': filetype})
       if (path.extname(filename) == '.md' ) {
         fs.readFile(page, "binary", function(err, file) {
         var processedpage = file.replace('%content%', convertmd.render(markdown)),
@@ -98,6 +98,6 @@ http.createServer(function(request, response) {
     , filename = path.join(process.cwd(), uri)
 
   response.writeHead(200);
-  response.write('<html><head><meta http-equiv="refresh" content="0; url=' + config.URL + uri + '" /></head></html>', 'binary', {'X-Powered-By': 'labHTTP Pivot', 'Content-Security-Policy': 'upgrade-insecure-requests'});
+  response.write('<html><head><meta http-equiv="refresh" content="0; url=' + config.URL + uri + '" /></head></html>', 'binary', {'X-Powered-By': 'Monorail Pivot', 'Content-Security-Policy': 'upgrade-insecure-requests'});
   response.end();
 }).listen(parseInt(80, 10));

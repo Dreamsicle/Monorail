@@ -5,7 +5,7 @@
   "display": "standalone",
   "background_color": "#EEEEEE",
   "theme_color": "#444",
-  "description": "Stock labHTTP site.",
+  "description": "Stock Monorail site.",
   "icons": [{
     "src": "img/touch/homescreen144.png",
     "sizes": "144x144",

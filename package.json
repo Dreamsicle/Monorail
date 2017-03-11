@@ -1,5 +1,5 @@
 {
-  "name": "labhttp-pivot",
+  "name": "Monorail-pivot",
   "version": "0.0.1",
   "description": "Pure Node.JS web server.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danPixl/labHTTP Pivot.git"
+    "url": "git+https://github.com/danPixl/Monorail Pivot.git"
   },
   "keywords": [
     "web",
@@ -18,9 +18,9 @@
   "author": "danPixl",
   "license": "SEE LICENSE IN README",
   "bugs": {
-    "url": "https://github.com/danPixl/labHTTP Pivot/issues"
+    "url": "https://github.com/danPixl/Monorail Pivot/issues"
   },
-  "homepage": "https://github.com/danPixl/labHTTP Pivot#readme",
+  "homepage": "https://github.com/danPixl/Monorail Pivot#readme",
   "dependencies": {
     "highlight.js": "^9.10.0",
     "http-auth": "^3.1.1",

@@ -2,12 +2,12 @@
 ----------
 
 ## Getting Started
-Change the files in the `content` subdirectory from where labHTTP is stored. Type in GitHub-flavored markdown.
+Change the files in the `content` subdirectory from where Monorail is stored. Type in GitHub-flavored markdown.
 
 You'll need to refresh ~2 times because of the ServiceWorker. It caches the majority of your site so that people can access it even when they're offline or your server is down.
 
 ## Configuration
-All configuration lives in `config.js`, located wherever you downloaded labHTTP.
+All configuration lives in `config.js`, located wherever you downloaded Monorail.
 
 ### Site path and name
 

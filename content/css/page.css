@@ -1,0 +1,86 @@
+html {
+    overflow: auto;
+}
+
+body {
+    margin: 40px auto;
+    max-width: 690px;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #1E1E24;
+    background-color: #BEC5AD;
+    padding: 0 10px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    position: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid #1E1E24;
+    border-bottom: 1px solid #1E1E24;
+    margin-top: -15px
+} 
+
+.footerhr {
+    margin-top: 0px !important;
+}
+
+.footerhr2 {
+    margin-top: 10px !important;
+}
+
+
+h1,h2,h3 {
+    line-height: 1.2
+}
+
+code {
+    color: #BEC5AD;
+    background-color: #1E1E24;
+    border-radius: 4px;
+}
+
+::selection {
+    background: #1E1E24; 
+    color: #f8f8f8;
+}
+
+::-moz-selection {
+    background: #1E1E24; 
+    color: #f8f8f8;
+}
+
+::-webkit-scrollbar
+{
+  width: 6px;  /* for vertical scrollbars */
+  height: 8px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: #1E1E24;
+}
+
+::-webkit-scrollbar-thumb:horizontal
+{
+  background: #686C5F;
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.backto {
+    font-weight: bold;
+}

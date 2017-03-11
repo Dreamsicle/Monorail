@@ -1,10 +1,24 @@
-# Monorail Pivot
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Fugaz+One');
+</style>
+</head>
+
+<img style="margin-left: -8px;" src="https://github.com/racklab/racklab.github.io/blob/master/images/monorail/logo/transparent.png?raw=true">
+
+<p style="font-family: 'Fugaz One', sans-serif; font-size: 1.1rem; margin-top: -25px;">Node.JS Webserver</p>
+<p  style="font-family: 'Fugaz One', sans-serif; font-size: 0.9rem;">A Racklab project</p>
+
+<p style="margin-top: -10px">
+<a href="http://nodejs.org"><img src="https://img.shields.io/badge/Node.js-6.9.1-339933.svg" alt="Node.JS"></a>
+<a href="http://npmjs.com"><img src="https://img.shields.io/badge/npm-3.10.8-C12127.svg" alt="npm"></a>
+</p>
+
+---
 
 ## Welcome! 
 
-This is the branch for a new, experimental version of Monorail. Compared to something like nginx or Apache, this is built to be more similar to [werc](http://werc.cat-v.org/) or [Jekyll](https://jekyllrb.com/).
-
-This might not be supported in the future, I'm just messing around. Tested on Node 6.9.1.
+This branch, and soon, repository, will be supporting a new webserver created from the ashes of labHTTP. It can currently take markdown files and convert them to a full blown website, similar to Jekyll, but soon there will be an extensions system.
 
 ## Install
 

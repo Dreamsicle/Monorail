@@ -29,6 +29,13 @@ http2.createServer(keys, function (request, response) {
   var uri = decodeURI(url.parse(request.url).pathname),
     filename = path.join(process.cwd() + '/content/', uri)
 
+    if (path.basename(filename) == 'config'){
+      response.writeHead(418, { 'X-Powered-By': 'labHTTP Teapot' })
+      response.write('SERVER_WARN: I\'m a teapot.')
+      response.end()
+      return
+    }
+
   fs.exists(filename, function (exists) {
     if (!exists) {
       response.writeHead(404, {'X-Powered-By': 'labHTTP Pivot'})

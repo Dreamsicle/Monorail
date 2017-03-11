@@ -1,4 +1,5 @@
 // Stolen from https://serviceworke.rs/strategy-cache-and-update_service-worker_doc.html
+// TODO: tweak this and add an 'must be used online' message
 
 var CACHE = '%name%-cache';
 self.addEventListener('install', function(evt) {
@@ -18,7 +19,11 @@ function precache() {
       '/css/page.css',
       '/css/prism.css',
       '/js/prism.js'
-    ]);
+    ])
+    .then(function() {
+      console.log('[install] All required resources have been cached, ' +'we\'re good!');
+        return self.skipWaiting();
+      })
   });
 }
 

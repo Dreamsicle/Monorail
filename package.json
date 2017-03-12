@@ -22,9 +22,14 @@
   },
   "homepage": "https://github.com/racklab/Monorail#readme",
   "dependencies": {
+    "any-promise": "^1.3.0",
+    "bluebird": "^3.5.0",
+    "co": "^4.6.0",
+    "fs-promise": "^2.0.0",
     "highlight.js": "^9.10.0",
     "http-auth": "^3.1.1",
-    "http2": "^3.3.6",
+    "http2": "adamhenson/node-http2#allow-frames-after-closed-with-rst",
+    "minimatch": "^3.0.3",
     "remarkable": "^1.7.1",
     "request": "^2.79.0"
   }

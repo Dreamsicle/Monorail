@@ -16,11 +16,18 @@ const port = process.argv[2] || web_port;
 
 // SSL
 // Enter the full path.
-const key = '/home/danPixl/.mySSL/Let\'s Encrypt/local.racklab/server.key'
-const cert = '/home/danPixl/.mySSL/Let\'s Encrypt/local.racklab/server.crt'
+const key = 'C:\\Users\\leo60228\\cert.key'
+const cert = 'C:\\Users\\leo60228\\cert.pem'
 
 // Password protection
 const username = 'username'
 const password = 'password'
 
-module.exports = {servertype, key, cert, username, password, URL, websiteName: name, port};
+// Extension settings; look at the docs of the extensions you use for what to put here.
+const extensions = {
+  forwards: {
+    '/abcdefg.md': '/index.md'
+  }
+};
+
+module.exports = {servertype, key, cert, username, password, URL, websiteName: name, port, extensions};

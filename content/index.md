@@ -47,3 +47,9 @@ const password = 'password'
 Because HTTPS/TLS/SSL is used, you're going to need to provide a certificate and a key. It's okay to used self-signed keys and certificates for development or messing around. If you're using `local.racklab.xyz` for your site's URL, we'll have signed certs up soon.
 
 In the future, you'll be able to force authentication to enter the site. Hence the username and password config options.
+
+### Extensions
+```javascript
+const extensions = {};
+```
+These are the settings for installed extensions, which are installed in the `extensions` directory. To write your own extension, see [these](https://gist.github.com/leo60228/8be2208e82531e59c36a7a9301b94088) docs.

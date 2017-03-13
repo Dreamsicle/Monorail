@@ -1,5 +1,5 @@
 module.exports = function() {
-  return [
+  return [/*
     {
       priority: 'early',
       matchErr: 499,
@@ -7,5 +7,5 @@ module.exports = function() {
         res.body = `Error ${res.errCode}`;
       }
     }
-  ]
+  ]*/
 }

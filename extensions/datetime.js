@@ -8,9 +8,9 @@ module.exports = function() {
       normal (ran after early, should be used for extensions that modify content being served)
       late
       */ 
-      matchPath: '/*',
+      matchPath: '/**',
       /*
-      What URL the extension should be run on. An asterisk can be used for all of them (like above).
+      What URL the extension should be run on. Two asterisks can be used for all of them (like above).
       */
       handle: function(res) {
         res.errCode = 200;

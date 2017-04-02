@@ -1,5 +1,5 @@
 var config = require(process.cwd() + '/config'),
-    numCPUs = require('os').cpus().length
+    numCPUs = require('os').cpus().length;// 1
 
 if (cluster.isMaster) {
   // Fork workers.

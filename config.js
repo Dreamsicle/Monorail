@@ -23,4 +23,11 @@ const cert = '/home/danpixl/.mySSL/Let\'s Encrypt/local.racklab/server.crt'
 const username = 'username'
 const password = 'password'
 
-module.exports = {servertype, key, cert, username, password, URL, websiteName: name, port};
+// Extension settings; look at the docs of the extensions you use for what to put here.
+const extensions = {
+  forwards: {
+    '/abcdefg.md': '/index.md'
+  }
+};
+
+module.exports = {servertype, key, cert, username, password, URL, websiteName: name, port, extensions};

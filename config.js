@@ -16,8 +16,8 @@ const port = process.argv[2] || web_port;
 
 // SSL
 // Enter the full path.
-const key = '/home/danPixl/.mySSL/Let\'s Encrypt/local.racklab/server.key'
-const cert = '/home/danPixl/.mySSL/Let\'s Encrypt/local.racklab/server.crt'
+const key = '/home/danpixl/.mySSL/Let\'s Encrypt/local.racklab/server.key'
+const cert = '/home/danpixl/.mySSL/Let\'s Encrypt/local.racklab/server.crt'
 
 // Password protection
 const username = 'username'

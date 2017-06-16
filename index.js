@@ -1,3 +1,8 @@
+console.log('DEPRECATED')
+console.log('This code is no longer being maintained, please wait 7 seconds to continue.')
+
+setTimeout(function() {
+
 var config = require('./config')
     cluster = require('cluster'),
     port = config.port
@@ -26,3 +31,4 @@ if (cluster.isMaster) {
 if (cluster.isMaster) {
     console.log("Monorail starting on port " + port + " with " + numCPUs + " threads.")
 }
+}, 7000)
